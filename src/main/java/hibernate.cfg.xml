@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="show_sql">true</property> 
+        <property name="hbm2ddl.auto">update</property>
+        <property name="connection.pool_size">1</property>
+        
+        <!-- Second level cache configuration -->
+        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+	    <property name="hibernate.cache.use_second_level_cache">false</property>  
+	    <!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory"</property>  -->
+        
+        <!-- Entity Mappings --> 
+        <mapping class="com.hibernate.firstlevelcache.Student"></mapping>
+        <mapping class="com.hibernate.secondlevelcache.Student"></mapping>
+        <mapping class="com.hibernate.transPersisDetach.Student"></mapping>
+        <mapping class="com.hibernate.hql.Student"></mapping>
+        <mapping class="com.hibernate.namedquery.Student"></mapping>
+        <mapping class="com.hibernate.criteria.Student"></mapping>
+        <mapping class="com.hibernate.mapping.onetoone.Student"></mapping>
+        <mapping class="com.hibernate.mapping.onetoone.Branch"></mapping>
+        <mapping class="com.hibernate.mapping.onetomany.Branch"></mapping>
+        <mapping class="com.hibernate.mapping.onetomany.Student"></mapping>
+        <mapping class="com.hibernate.mapping.manytomany.Student"></mapping>
+        <mapping class="com.hibernate.mapping.manytomany.Branch"></mapping>
+        <mapping class="com.hibernate.mapping.cascade.Branch"></mapping>
+        <mapping class="com.hibernate.mapping.cascade.Student"></mapping>
+        <mapping class="com.hibernate.proxyobjects.Student"></mapping>
+ 		
+ 		<mapping class="com.hibernate.inheritance.Vehicle"></mapping>
+ 		<mapping class="com.hibernate.inheritance.TwoWheeler"></mapping>
+ 		<mapping class="com.hibernate.inheritance.FourWheeler"></mapping>
+ 		
+ 		<mapping class="com.hibernate.inheritanceTablePerClass.Vehicle"></mapping>
+ 		<mapping class="com.hibernate.inheritanceTablePerClass.TwoWheeler"></mapping>
+ 		<mapping class="com.hibernate.inheritanceTablePerClass.FourWheeler"></mapping>
+ 		
+ 		<mapping class="com.hibernate.inheritanceJoinstartegy.Vehicle"></mapping>
+ 		<mapping class="com.hibernate.inheritanceJoinstartegy.TwoWheeler"></mapping>
+ 		<mapping class="com.hibernate.inheritanceJoinstartegy.FourWheeler"></mapping>
+ 		
+ 		<mapping class="com.hibernate.mappedby.Student"></mapping>
+ 		<mapping class="com.hibernate.mappedby.Branch"></mapping>
+ 		
+    </session-factory>
+</hibernate-configuration>
